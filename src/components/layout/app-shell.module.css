@@ -1,0 +1,108 @@
+.page {
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(231, 235, 243, 0.88);
+}
+
+.headerInner {
+  width: min(calc(100% - 32px), var(--content-width));
+  margin: 0 auto;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  color: var(--brand);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navLink,
+.navLinkActive {
+  color: var(--muted-strong);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.navLink:hover {
+  color: var(--foreground);
+}
+
+.navLinkActive {
+  color: var(--foreground);
+}
+
+.userArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userName {
+  color: var(--muted-strong);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5b44f7, #8f2bf7);
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 10px 18px rgba(92, 58, 247, 0.24);
+}
+
+.main {
+  width: min(calc(100% - 32px), var(--content-width));
+  margin: 32px auto 56px;
+}
+
+@media (max-width: 720px) {
+  .headerInner {
+    width: min(calc(100% - 24px), var(--content-width));
+    min-height: 72px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  .brandRow {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .main {
+    width: min(calc(100% - 24px), var(--content-width));
+    margin-top: 24px;
+  }
+}
