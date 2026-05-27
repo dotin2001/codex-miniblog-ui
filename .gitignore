@@ -10,15 +10,15 @@
 !.yarn/releases
 !.yarn/versions
 
+# Codex
+/.codex/
+
 # testing
 /coverage
 
 # next.js
 /.next/
 /out/
-
-# Codex
-.codex
 
 # production
 /build
