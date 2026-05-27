@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# Codex
+/.codex/
+
 # production
 /build
 
