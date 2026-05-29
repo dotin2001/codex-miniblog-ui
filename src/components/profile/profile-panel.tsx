@@ -1,4 +1,5 @@
 import type { UserProfile } from "@/types/blog";
+import { ProfileUpdateModal } from "./profile-update-modal";
 import styles from "./profile-panel.module.css";
 
 interface ProfilePanelProps {
@@ -10,14 +11,17 @@ export function ProfilePanel({ user, highlights }: ProfilePanelProps) {
   return (
     <section className={styles.panel}>
       <div className={styles.hero}>
-        <div className={styles.identity}>
-          <span className={styles.avatar} aria-hidden="true">
-            {user.initials}
-          </span>
-          <div>
-            <h1 className={styles.name}>{user.name}</h1>
-            <p className={styles.title}>{user.title}</p>
+        <div className={styles.heroTopRow}>
+          <div className={styles.identity}>
+            <span className={styles.avatar} aria-hidden="true">
+              {user.initials}
+            </span>
+            <div>
+              <h1 className={styles.name}>{user.name}</h1>
+              <p className={styles.title}>{user.title}</p>
+            </div>
           </div>
+          <ProfileUpdateModal user={user} />
         </div>
         <p className={styles.bio}>{user.bio}</p>
       </div>

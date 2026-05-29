@@ -12,6 +12,13 @@
   border-bottom: 1px solid var(--border);
 }
 
+.heroTopRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .identity {
   display: flex;
   align-items: center;
@@ -45,11 +52,177 @@
   font-size: 0.95rem;
 }
 
+.updateButton,
+.closeButton,
+.secondaryButton,
+.primaryButton,
+.fieldInput {
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.updateButton {
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  align-self: center;
+  color: #ffffff;
+  background: var(--hero-gradient);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  box-shadow: 0 16px 34px rgba(90, 57, 247, 0.2);
+  cursor: pointer;
+}
+
+.updateButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(90, 57, 247, 0.26);
+}
+
+.updateButton:focus-visible,
+.closeButton:focus-visible,
+.secondaryButton:focus-visible,
+.primaryButton:focus-visible,
+.fieldInput:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 93, 255, 0.2);
+}
+
 .bio {
   max-width: 680px;
   margin-top: 22px;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(20, 24, 45, 0.34);
+  backdrop-filter: blur(8px);
+}
+
+.profileModal {
+  width: min(420px, 100%);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 28px 60px rgba(25, 29, 51, 0.2);
+  padding: 24px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modalTitle {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.closeButton {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--muted-strong);
+  background: var(--surface-muted);
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: var(--foreground);
+  background: #edf1f9;
+}
+
+.modalForm {
+  margin-top: 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.fieldLabel {
+  display: grid;
+  gap: 8px;
+}
+
+.fieldLabel span {
+  color: var(--muted-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.fieldInput {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--foreground);
+  background: #ffffff;
+}
+
+.fieldInput:hover {
+  border-color: var(--border-strong);
+}
+
+.fieldInput:focus-visible {
+  border-color: #7b68ff;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.secondaryButton,
+.primaryButton {
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  color: var(--muted-strong);
+  background: transparent;
+}
+
+.secondaryButton:hover {
+  color: var(--foreground);
+  background: #f4f6fb;
+}
+
+.primaryButton {
+  color: #ffffff;
+  background: var(--brand);
+  box-shadow: 0 14px 28px rgba(61, 65, 243, 0.18);
+}
+
+.primaryButton:hover {
+  background: #353bf1;
+  box-shadow: 0 16px 30px rgba(61, 65, 243, 0.24);
 }
 
 .content {
@@ -106,6 +279,28 @@
 @media (max-width: 720px) {
   .hero {
     padding: 24px 20px;
+  }
+
+  .heroTopRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .updateButton {
+    width: 100%;
+  }
+
+  .profileModal {
+    padding: 20px;
+  }
+
+  .modalActions {
+    flex-direction: column-reverse;
+  }
+
+  .secondaryButton,
+  .primaryButton {
+    width: 100%;
   }
 
   .content {
