@@ -1,7 +1,6 @@
-/* global describe, expect, it */
-
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
 import { blogPosts } from "@/lib/data";
 import { BlogDashboard } from "@/components/blog/blog-dashboard";
 

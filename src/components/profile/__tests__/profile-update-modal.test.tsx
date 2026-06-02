@@ -1,7 +1,6 @@
-/* global describe, expect, it */
-
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
 import { currentUser, profileHighlights } from "@/lib/data";
 import { ProfilePanel } from "@/components/profile/profile-panel";
 
